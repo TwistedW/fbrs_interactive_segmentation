@@ -217,7 +217,7 @@ class InteractiveDemoApp(ttk.Frame):
 
             if len(filename) > 0:
                 if mask.max() < 256:
-                    mask = mask.astype(np.uint8)
+                    mask = mask.astype(np.uint8) * 255
                 cv2.imwrite(filename, mask)
 
     def _about_callback(self):
